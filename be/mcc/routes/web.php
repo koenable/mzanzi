@@ -30,6 +30,6 @@ $router->group(['prefix' => 'mccap'], function($router){
 
 
 $router->group(['prefix' => 'mccapi'], function($router){
-        // $router->post('teams', 'TeamController@createTeam');
-        $router->post('teams', 'TeamController@index');
+         $router->post('teams', 'TeamController@createTeam');
+         $router->put('teams/{id}', 'TeamController@updateTeam');
 });
