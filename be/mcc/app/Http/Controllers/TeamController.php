@@ -17,6 +17,7 @@ class TeamController extends Controller
     {}
 
 
+    // create a new team
     public function createTeam(Request $request){
         // validate user input
         $this->validate($request, [
@@ -40,8 +41,7 @@ class TeamController extends Controller
     }
 
 
-
-
+    // update existing tam
     public function updateTeam($id,Request $request){
         //validate
         $this->validate($request,[
@@ -57,18 +57,26 @@ class TeamController extends Controller
             'home_kit_shirt' => $request->input('home_kit_shirt'),
             'away_kit_shorts' => $request->input('away_kit_shorts'),
          ]);
-
          return response()->json($results);
-        // $results->name=  $request->input('name');
-        // $results->logo=  $request->input('logo');
-        // $results->home_kit_shirt= $request->input('home_kit_shirt');
-        // $results->away_kit_shorts= $request->input('away_kit_shorts');
 
 
     }
 
 
- 
+    // Soft delete an existing team( change 'active' = 1)
+    public function deactivateTeam($id,Request $request){
+        // validate 
+        $this->validate($request, [
+            'active' => 'required' 
+        ]);
+
+        // findbyId and delete
+        $results = Team::find(($id))->update([
+            'active' => $request->input('active') 
+        ]);
+        return response()->json($results, 200);
+
+    }   
 
 
 
