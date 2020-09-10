@@ -1,0 +1,228 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+.header {
+  @include onDesktop {
+    background-color: color(mcc_dark);
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+  }
+
+  @include onIpadPro {
+  }
+
+  @include onIpad {
+  }
+
+  @include onIphoneX {
+  }
+
+  @include onIphone5 {
+  }
+
+  @include onIphone2 {
+  }
+
+  @include onPhone {
+    background-color: color(mcc_dark);
+  }
+
+  .menu_trigger {
+    @include onDesktop {
+      color: color(mcc_white);
+      display: block;
+      float: left;
+      width: auto;
+      font-size: 2em;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+    @include onIpadPro {
+    }
+
+    @include onIpad {
+    }
+
+    @include onIphoneX {
+    }
+
+    @include onIphone5 {
+    }
+
+    @include onIphone2 {
+    }
+
+    @include onPhone {
+      color: color(mcc_white);
+    }
+  }
+}
+
+.menu_overlay {
+  @include onDesktop {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: color(mcc_dark);
+    top: 0%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+  }
+  @include onIpadPro {
+  }
+
+  @include onIpad {
+  }
+
+  @include onIphoneX {
+  }
+
+  @include onIphone5 {
+  }
+
+  @include onIphone2 {
+  }
+  @include onPhone {
+    background-color: color(mcc_dark);
+  }
+
+  .menu_close {
+    @include onDesktop {
+      color: color(mcc_white);
+      display: block;
+      float: left;
+      width: auto;
+      font-size: 3em;
+      padding: 0px 20px;
+      text-decoration: none;
+      top: 0px;
+      position: relative;
+      margin-top: -2em;
+      margin-left: -25em;
+    }
+
+    @include onIpadPro {
+      margin-top: -15em;
+      margin-left: 0em;
+      margin-right: -15em;
+      padding-bottom: 1em;
+    }
+
+    @include onIpad {    
+      margin-top: -10em;
+      margin-right: -12em;
+     }
+
+    @include onIphoneX {
+      margin-top: -10em;
+      margin-right: -6em;
+     }
+
+     @include onIphone6_7_8 {
+      margin-top: -8em;
+    }        
+
+
+    @include onIphone5 {
+      margin-top: -6em;
+      margin-left: 0em;
+      margin-right: -4em;
+      padding-bottom: 1em;
+    }
+
+    @include onIphone2 {
+    }
+
+    @include onPhone {
+      margin-top: -10em;
+      margin-left: 0em;
+      margin-right: -7em;
+      padding-bottom: 1em;
+      font-size: 2em;
+
+    }
+
+  }
+
+
+
+  .menu_options_list {
+    @include onDesktop {
+      padding-top: 0em;
+      margin-bottom: 0em;
+
+      .menu_item:hover {
+        color: color(mcc_primary);
+      }
+    }
+
+    @include onIpadPro {
+      padding-top: 0em;
+      margin-bottom: -18em;
+    }
+    @include onIpad {
+    }
+
+    @include onIphoneX {
+    }
+
+    @include onIphone5 {
+    }
+
+    @include onIphone2 {
+    }
+
+    @include onPhone {
+    }
+
+    .menu_item {
+      @include onDesktop {
+        font-size: 3em;
+        list-style-type: none;
+        color: color(mcc_white);
+        padding-left: 1em;
+      }
+
+      @include onIpadPro {
+        padding-top: 1em;
+      }
+  
+      @include onIpad {
+      
+      }
+      
+      @include onIphoneX {
+        padding-top: 0em;
+        font-size: 2em;
+        padding-left: 1em;
+
+      
+      }
+      
+      @include onIphone5 {
+      
+      }
+      
+      @include onIphone2 {
+      
+      }
+      
+      @include onPhone {
+        color: color(mcc_white);
+        padding-left: 0.2em;
+        font-size: 1.5em;
+        padding-left: 1em;
+
+      }
+      
+      
+
+    }
+  }
+}

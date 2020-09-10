@@ -1,0 +1,52 @@
+.w-full{
+    width: 100%;
+  }
+
+    .h-full{
+
+        @include onDesktop{
+            height: 100%;
+        }     
+    }
+
+
+  .h-screen{
+    height: calc(var(--vh, 1vh)*100);
+  }
+  
+
+  
+  .fixed{
+    position: fixed;
+  }
+  
+  .pin-t{
+    top:0
+  }
+  
+  .pin-l{
+    left: 0;
+  }
+  
+  .z-header{
+    z-index: 50;
+  }
+
+  .flex{
+    display: flex;  
+  }
+  
+  .justify-center{
+    justify-content: center;
+  }
+  
+  
+  .items-stretch {
+  
+    @include onDesktop{
+      -webkit-align-items: stretch;
+      align-items: stretch;
+    }
+    
+  } 
+  

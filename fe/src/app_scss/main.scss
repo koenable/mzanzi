@@ -1,0 +1,40 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+  }
+
+
+
+
+
+// import Fontname Multi
+@import "./../assets/fonts/Muli/multi.css";
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'base/reset';
+@import 'base/typography';
+
+// @import 'layout/gri  d';
+@import 'themes/dark';
+
+//  I also added a shame file because I think it’s a great idea. A shame file is one where you put all the hacks you’re not proud of so that they don’t get lost and ignored. Having this file will encourage me to be honest about the hacks I write and make it easier for me to monitor my technical debt.
+//  The import for the shame file goes at the bottom of main.scss .
+ @import 'shame';
+
+ /* You can add global styles to this file, and also import other style files */
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
