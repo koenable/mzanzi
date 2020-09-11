@@ -58,3 +58,11 @@ $router->group(['prefix' => 'mccapi'], function($router){
         $router->put('tournament/{id}', 'TournamentController@updateTournament');
 });
 
+
+
+$router->group(['prefix' => 'mccapi'], function($router){
+        // $router->get('tournament', 'FixtureController@getallTournament');
+        $router->post('fixture', 'FixtureController@createFixture');
+        // $router->put('tournament/{id}', 'FixtureController@updateTournament');
+});
+
