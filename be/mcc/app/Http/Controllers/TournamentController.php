@@ -65,7 +65,7 @@ class TournamentController extends Controller
 
     // get all extisting Tournamanets
     public function getallTournament(Request $results){
-        return response()->json(TeTournamentam::all());
+        return response()->json(Tournament::all());
     }
 
 

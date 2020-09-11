@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
+use App\Fixture;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class TeamController extends Controller
+class FixtureController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,25 +16,28 @@ class TeamController extends Controller
     {}
 
 
-    // create a new team
-    public function createTeam(Request $request){
+    // create a new fixture table
+    public function createFixture(Request $request){
         // validate user input
         $this->validate($request, [
             'name' => 'required',
-            'logo' => 'required',
-            'home_kit_shirt' => 'required',
-            'away_kit_shorts' => 'required',
-            'active' => 'required'
-        ]);
+            'date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'active' => 'required',
+            'tournament_id' => 'required',
+            'team_one_id' => 'required',
+            'team_two_id' => 'required'
+            ]);
 
-        $results = Team::where('name', '=', $request->input('name'))->count();
+        $results = Fixture::where('name', '=', $request->input('name'))->count();
 
         if($results>0){
-            return "This Team is already registered:" . $request->input('name') . ". Chose different team name.";
+            return "This Fixure is already Set Up:" . $request->input('name') . ". Chose a different Name for the fixture.";
         } 
         else
         {   // Save new the new team
-            $team = Team::create($request->all());
+            $team = Fixture::create($request->all());
             return response()->json($team, 201);
         }
 
@@ -45,7 +47,7 @@ class TeamController extends Controller
 
     // Update existing Team
     // Soft delete an existing team( change 'active' = 1)
-    public function updateTeam($id,Request $request){
+    public function updateFixture($id,Request $request){
         //validate
         $this->validate($request,[
             'name' => 'required',
