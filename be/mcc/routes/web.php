@@ -30,9 +30,11 @@ $router->group(['prefix' => 'mccap'], function($router){
 
 
 $router->group(['prefix' => 'mccapi'], function($router){
-         $router->post('teams', 'TeamController@createTeam');
-         $router->put('teams/{id}', 'TeamController@updateTeam');
-         $router->delete('teams/{id}', 'TeamController@deactivateTeam');     
+        $router->get('teams', 'TeamController@getallTeams');
+        $router->post('teams', 'TeamController@createTeam');
+        $router->put('teams/{id}', 'TeamController@updateTeam');
+        $router->delete('teams/{id}', 'TeamController@deactivateTeam');     
+        
 });
 
 $router->group(['prefix' => 'mccapi'], function($router){
@@ -40,3 +42,12 @@ $router->group(['prefix' => 'mccapi'], function($router){
         $router->post('player', 'PlayerController@createNewPlayer');
         $router->put('player/{id}', 'PlayerController@updatePlayerDetails');
 });
+
+
+
+$router->group(['prefix' => 'mccapi'], function($router){
+        $router->get('sponsors', 'SponsorController@getallSponsors');
+        $router->post('sponsors', 'SponsorController@createSponsor');
+        $router->put('sponsors/{id}', 'SponsorController@updateSponsor');
+});
+

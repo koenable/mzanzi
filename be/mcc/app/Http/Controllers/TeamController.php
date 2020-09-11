@@ -69,6 +69,12 @@ class TeamController extends Controller
     }
 
 
+    // get all extisting Teams
+    public function getallTeams(Request $results){
+        return response()->json(Team::all());
+    }
+
+
 
 
 
