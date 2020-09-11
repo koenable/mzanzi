@@ -32,6 +32,11 @@ $router->group(['prefix' => 'mccap'], function($router){
 $router->group(['prefix' => 'mccapi'], function($router){
          $router->post('teams', 'TeamController@createTeam');
          $router->put('teams/{id}', 'TeamController@updateTeam');
-         $router->delete('teams/{id}', 'TeamController@deactivateTeam');
-        //  
+         $router->delete('teams/{id}', 'TeamController@deactivateTeam');     
+});
+
+$router->group(['prefix' => 'mccapi'], function($router){
+        $router->get('player', 'PlayerController@showAllPlayers');
+        $router->post('player', 'PlayerController@createNewPlayer');
+        $router->put('player/{id}', 'PlayerController@updatePlayerDetails');
 });

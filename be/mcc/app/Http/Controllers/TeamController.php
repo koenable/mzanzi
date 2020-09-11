@@ -25,12 +25,13 @@ class TeamController extends Controller
             'logo' => 'required',
             'home_kit_shirt' => 'required',
             'away_kit_shorts' => 'required',
+            'active' => 'required'
         ]);
 
         $results = Team::where('name', '=', $request->input('name'))->count();
 
         if($results>0){
-            return "This is already registered:" . $request->input('name') . ". Chose different team name.";
+            return "This Team is already registered:" . $request->input('name') . ". Chose different team name.";
         } 
         else
         {   // Save new the new team
@@ -41,7 +42,10 @@ class TeamController extends Controller
     }
 
 
-    // update existing tam
+
+
+    // Update existing Team
+    // Soft delete an existing team( change 'active' = 1)
     public function updateTeam($id,Request $request){
         //validate
         $this->validate($request,[
@@ -49,6 +53,7 @@ class TeamController extends Controller
             'logo' => 'required',
             'home_kit_shirt' => 'required',
             'away_kit_shorts' => 'required',
+            'active' => 'required'
         ]);
         
         $results = Team::find(($id))->update([
@@ -56,6 +61,7 @@ class TeamController extends Controller
             'logo' => $request->input('logo'),
             'home_kit_shirt' => $request->input('home_kit_shirt'),
             'away_kit_shorts' => $request->input('away_kit_shorts'),
+            'active' => $request->input('active')
          ]);
          return response()->json($results);
 
@@ -63,20 +69,7 @@ class TeamController extends Controller
     }
 
 
-    // Soft delete an existing team( change 'active' = 1)
-    public function deactivateTeam($id,Request $request){
-        // validate 
-        $this->validate($request, [
-            'active' => 'required' 
-        ]);
 
-        // findbyId and delete
-        $results = Team::find(($id))->update([
-            'active' => $request->input('active') 
-        ]);
-        return response()->json($results, 200);
-
-    }   
 
 
 

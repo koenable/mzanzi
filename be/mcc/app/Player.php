@@ -6,7 +6,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Team extends Model 
+class Player extends Model 
 {
 
     /**
@@ -15,7 +15,7 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'logo', 'home_kit_shirt', 'away_kit_shorts','active'
+        'name', 'surname','email', 'team_id', 'active'
     ];
 
     
