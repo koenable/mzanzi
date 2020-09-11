@@ -51,3 +51,10 @@ $router->group(['prefix' => 'mccapi'], function($router){
         $router->put('sponsors/{id}', 'SponsorController@updateSponsor');
 });
 
+
+$router->group(['prefix' => 'mccapi'], function($router){
+        $router->get('tournament', 'TournamentController@getallTournament');
+        $router->post('tournament', 'TournamentController@createTournament');
+        $router->put('tournament/{id}', 'TournamentController@updateTournament');
+});
+
