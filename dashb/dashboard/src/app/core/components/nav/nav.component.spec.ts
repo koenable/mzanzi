@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LogoModule } from '../logo/logo.module';
 import { NavMenuItemComponent } from './nav-menu-item/nav-menu-item.component';
-import { NavToolbarComponent } from './nav-toolbar/nav-toolbar.component';
+import { NavToolbarComponent } from './nav-toollbar/nav-toollbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { sideNavPath } from '../../../nav-routing';
