@@ -10,11 +10,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LogoModule } from '../logo/logo.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavMenuItemComponent } from './nav-menu-item/nav-menu-item.component';
-import { NavToolbarComponent } from './nav-toollbar/nav-toollbar.component';
+import { NavToollbarComponent } from './nav-toollbar/nav-toollbar.component';
 import { MatExpansionModule } from '@angular/material';
 
 @NgModule({
-    declarations: [NavComponent, NavMenuItemComponent, NavToolbarComponent],
+    declarations: [NavComponent, NavMenuItemComponent, NavToollbarComponent],
     imports: [
         CommonModule,
         RouterModule,

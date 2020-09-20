@@ -9,10 +9,10 @@
       </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-      <app-nav-toolbar [activePage]="getActivePage()"
+      <app-nav-toollbar [activePage]="getActivePage()"
                        (toggleSideNav)="toggleSideNav()"
                        (logout)="logout()"
-                       [previousUrl]="getPreviousUrl()"></app-nav-toolbar>
+                       [previousUrl]="getPreviousUrl()"></app-nav-toollbar>
       <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

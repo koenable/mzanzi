@@ -28,11 +28,13 @@ export const navRoutes: NavRoute[] = [
             import('./pages/tournaments-page/tournaments-page.module').then(
                 m => m.TournamentsPageModule,
             ),
-    },
+    }
+    ,
     {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
+     
     },
 ];
 
