@@ -34,7 +34,6 @@ export const navRoutes: NavRoute[] = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
-     
     },
 ];
 
@@ -46,7 +45,7 @@ export class NavRouteService {
     navRoutes: NavRoute[];
 
     constructor(router: Router) {
-        //@description - Return the the selected route groups from/to the sidenav when home page is loaded
+        //@description - Return the the selected route groups from/to the sidenav when home page
         this.navRoute = router.config.find(route => route.path === sideNavPath);
         this.navRoutes = this.navRoute.children
             .filter(route => route.data && route.data.title)

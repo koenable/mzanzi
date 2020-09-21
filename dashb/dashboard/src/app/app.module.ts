@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavModule } from './core/components/nav/nav.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { HttpConfigInterceptor } from './core/services/http/interceptore.service';
+import { HttpConfigInterceptor } from './core/services/http/interceptor.service';
 
 @NgModule({
     declarations: [AppComponent],
