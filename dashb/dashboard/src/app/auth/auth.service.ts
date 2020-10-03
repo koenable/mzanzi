@@ -32,12 +32,12 @@ export class AuthService extends CrudService {
         }
     }
 
+    
     public async mockLogin(email: string, password: string) {
         try {
             if (!(email === 'user' && password === 'user')) {
                return alert(
                     'When using mockLogin, login with credentials: \nemail: user\npassword:user',
-
                 );
             }
             this.token = 'user';

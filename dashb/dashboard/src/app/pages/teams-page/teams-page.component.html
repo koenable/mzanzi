@@ -1,0 +1,19 @@
+<!-- <mat-grid-list cols="4" rowHeight="10em">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+
+<mat-grid-list cols="4" rowHeight="10em">
+  <mat-grid-tile colspan="0.5" rowspan="1">
+    <mat-card>Simple card</mat-card>
+  </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1" >
+        <mat-card>Simple card</mat-card>
+      </mat-grid-tile>
+      </mat-grid-list>

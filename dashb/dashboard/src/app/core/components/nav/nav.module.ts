@@ -13,6 +13,7 @@ import { NavMenuItemComponent } from './nav-menu-item/nav-menu-item.component';
 import { NavToollbarComponent } from './nav-toollbar/nav-toollbar.component';
 import { MatExpansionModule } from '@angular/material';
 
+
 @NgModule({
     declarations: [NavComponent, NavMenuItemComponent, NavToollbarComponent],
     imports: [
@@ -25,7 +26,7 @@ import { MatExpansionModule } from '@angular/material';
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
-        MatExpansionModule,
+        MatExpansionModule
     ],
 })
 export class NavModule {}

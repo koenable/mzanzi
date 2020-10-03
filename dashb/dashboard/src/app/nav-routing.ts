@@ -22,11 +22,21 @@ export const navRoutes: NavRoute[] = [
     },
     {
         data: { title: 'Tournaments' },
-        icon: 'soccer-ball',
+        icon: 'home',
         path: 'tournaments',
         loadChildren: () =>
             import('./pages/tournaments-page/tournaments-page.module').then(
                 m => m.TournamentsPageModule,
+            ),
+    }
+    ,
+    {
+        data: { title: 'Teams' },
+        icon: 'teams',
+        path: 'teams',
+        loadChildren: () =>
+            import('./pages/teams-page/teams-page.module').then(
+                m => m.TeamsPageModuleModule,
             ),
     }
     ,

@@ -5,6 +5,7 @@ import { StorageKey } from './storage.model';
     providedIn: 'root',
 })
 export class StorageService {
+    //@descr - Intaracts(Saves/Gets data) with local storage.
     private storage: Storage;
 
     constructor() {
@@ -28,4 +29,6 @@ export class StorageService {
     public clear() {
         this.storage.clear();
     }
+
+
 }
