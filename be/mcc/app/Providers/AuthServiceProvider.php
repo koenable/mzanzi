@@ -32,7 +32,15 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->app['auth']->viaRequest('api', function ($request) {
             if ($request->input('api_token')) {
-                return User::where('api_token', $request->input('api_token'))->first();
+                $results =  User::where('api_token', $request->input('api_token'))->first();
+                var_dump($results);
+                if($results)
+                {
+                    return "User API-token has been verified!";
+                }else{
+                    return "Failed to verify API-token. Please contact sys admin.";
+
+                }
             }
         });
     }

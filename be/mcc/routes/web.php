@@ -22,19 +22,19 @@ $router->get('/first', function () use ($router){
 
 
 $router->group(['prefix' => 'mccap'], function($router){
-        $router->get('companydata', 'CompanyDataController@showCompanyData');   
+        $router->get('companydata', 'CompanyDataController@showCompanyData');
         $router->get('companydata/{id}', 'CompanyDataController@showSingleData');
-        $router->post('companydata', 'CompanyDataController@createnNew');  
+        $router->post('companydata', 'CompanyDataController@createnNew');
         $router->put('companydata/{id}',  'CompanyDataController@updatedetails');
-}); 
+});
 
 
 $router->group(['prefix' => 'mccapi'], function($router){
         $router->get('teams', 'TeamController@getallTeams');
         $router->post('teams', 'TeamController@createTeam');
         $router->put('teams/{id}', 'TeamController@updateTeam');
-        $router->delete('teams/{id}', 'TeamController@deactivateTeam');     
-        
+        $router->delete('teams/{id}', 'TeamController@deactivateTeam');
+
 });
 
 $router->group(['prefix' => 'mccapi'], function($router){
@@ -66,3 +66,19 @@ $router->group(['prefix' => 'mccapi'], function($router){
         // $router->put('tournament/{id}', 'FixtureController@updateTournament');
 });
 
+
+
+
+$router->group(['prefix' => 'admin/{id}'], function () use ($router) {
+
+    $router->post('users/login', ['middleware' => 'auth', function ($requeat) {
+        // Matches The "/admin/users" URL
+        // return $router;
+
+        // $user = $requeat;
+            var_dump($requeat);
+        // return $user;
+    }]);
+
+
+});
