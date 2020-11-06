@@ -1,0 +1,23 @@
+/*
+/*
+/*  custom.css
+/*
+/*  If not using Gulp and Sass, add your custom CSS below then include it
+/*  in your page by adding a reference to assets/css/custom.css in the head of each page.
+/*
+*/
+
+.mcc_logo{
+  height:2.5em;
+  width:auto;
+}
+
+.parters_logo{
+  height:7em;
+  width:auto;
+}
+
+.gallery_parters_logo{
+  height:12em;
+  width:auto;
+}

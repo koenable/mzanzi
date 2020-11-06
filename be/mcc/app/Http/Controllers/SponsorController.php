@@ -23,18 +23,18 @@ class SponsorController extends Controller
             'name' => 'required',
             'logo' => 'required',
             'description' => 'required',
-       
+
         ]);
 
         $results = Sponsor::where('name', '=', $request->input('name'))->count();
 
         if($results>0){
             return "This Sponser is already registered:" . $request->input('name') . ". Please register a different Sponsor..";
-        } 
+        }
         else
         {   // Save new the new team
             $team = Sponsor::create($request->all());
-            return response()->json($team, 201);
+            return response()->json($team);
         }
 
     }
@@ -51,11 +51,11 @@ class SponsorController extends Controller
                 'logo' => 'required',
                 'description' => 'required',
         ]);
-        
+
         $sponsor_update = Sponsor::findOrFail($id);
         $sponsor_update->update($request->all());
-        return response()->json($sponsor_update, 200); 
-    
+        return response()->json($sponsor_update, 200);
+
     }
 
 

@@ -4,8 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
 
-class Authenticate
+class Authenticate implements AuthenticatesRequests
 {
     /**
      * The authentication guard factory instance.
@@ -35,8 +37,7 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        // return $request;
-        if ($this->auth->guard($guard)->guest()) {
+        if ($this->auth->guard($guard)->validate()) {
             return response('Unauthorized.', 401);
         }
 

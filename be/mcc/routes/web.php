@@ -69,15 +69,11 @@ $router->group(['prefix' => 'mccapi'], function($router){
 
 
 
-$router->group(['prefix' => 'admin/{id}'], function () use ($router) {
+$router->group(['prefix' => 'admin/{id}' , 'middleware' => 'auth'], function ($request) use ($router) {
 
-    $router->post('users/login', ['middleware' => 'auth', function ($requeat) {
-        // Matches The "/admin/users" URL
-        // return $router;
+    $router->post('users/login', ['middleware' => 'responsefommater', function ($request) {
 
-        // $user = $requeat;
-            var_dump($requeat);
-        // return $user;
+         return response()->json(['res' => $request] );
     }]);
 
 

@@ -17,6 +17,8 @@ export class TeamsPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  console.log("Archa")
   }
 
   name= "Old timde";
