@@ -6,6 +6,8 @@ import {
 import { NavRoute } from '../../../nav-routing';
 import { AuthService } from '../../../auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 @Component({
     selector: 'app-nav',
@@ -13,19 +15,30 @@ import { ActivatedRoute, Router } from '@angular/router';
     styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-    isOpen = true;
+    mobileQuery: MediaQueryList;
 
     constructor(
         private navigationService: NavigationService,
         private authService: AuthService,
         private router: Router,
-    ) {}
+        private changeDetectorRef: ChangeDetectorRef,
+        private media: MediaMatcher
 
-    ngOnInit() {}
-
-    public toggleSideNav() {
-        this.isOpen = !this.isOpen;
+    ) {
+        this.mobileQuery = media.matchMedia('(max-width: 600px)');
+        this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+        this.mobileQuery.addListener(this._mobileQueryListener);
     }
+
+
+    // Detected and Store boolean when DOM changes to mobile view and back. 
+    private _mobileQueryListener: () => void;
+
+
+
+
+    ngOnInit() { }
+
 
     public getNavigationItems(): NavRoute[] {
         return this.navigationService.getNavigationItems();
@@ -42,5 +55,14 @@ export class NavComponent implements OnInit {
 
     public getPreviousUrl(): string[] {
         return this.navigationService.getPreviousUrl();
+    }
+
+
+
+
+
+    // Detach mobile view change detection event Listerner  
+    ngOnDestroy(): void {
+        this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 }

@@ -1,6 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" >
     
-  <mat-sidenav mode="side" [opened]="isOpen" role="navigation" >
+  <mat-sidenav mode="over" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"  [opened] = "mobileQuery.matches ? false : true" role="navigation" >
       <div class="sidenav-logo-container">
           <app-logo></app-logo>
       </div>
@@ -13,8 +13,8 @@
 
   <mat-sidenav-content>
       <app-nav-toollbar [activePage]="getActivePage()"
-                       (toggleSideNav)="toggleSideNav()"
                        (logout)="logout()"
+                       (click)="snav.toggle()"
                        [previousUrl]="getPreviousUrl()"></app-nav-toollbar>
                        
       <router-outlet></router-outlet>
@@ -22,3 +22,4 @@
 
   
 </mat-sidenav-container>
+<!-- (toggleSideNav)="toggleSideNav()" -->
