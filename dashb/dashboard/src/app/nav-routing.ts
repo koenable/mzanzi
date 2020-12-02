@@ -21,6 +21,16 @@ export const navRoutes: NavRoute[] = [
             ),
     },
     {
+        data: { title: 'Landing' },
+        icon: 'home',
+        path: 'landing',
+        loadChildren: () =>
+            import('./pages/landing-page/landing-page.module').then(
+                m => m.LandingPageModule,
+            ),
+        
+    },
+    {
         data: { title: 'Tournaments' },
         icon: 'home',
         path: 'tournaments',
