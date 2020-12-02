@@ -1,5 +1,5 @@
 <div class="container">
-<mat-progress-bar mode="query" color="accent"  ></mat-progress-bar>
+  <mat-progress-bar mode="query" color="accent"></mat-progress-bar>
 </div>
 
 
@@ -7,11 +7,12 @@
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
     <!-- Import S-->
-  <mat-grid-tile *ngFor="let i of [1, 2, 3, 4]" [colspan]="( cardLayout | async )?.miniCard.cols"
-      [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <app-statistics-card title="Card {{i}}"><div>Mini Card Content Here</div></app-statistics-card>
+    <mat-grid-tile *ngFor="let i of [1, 2, 3, 4]" [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-statistics-card title="Card {{i}}">
+        <div>Mini Card Content Here</div>
+      </app-statistics-card>
     </mat-grid-tile>
 
 
   </mat-grid-list>
- </div>
+</div>

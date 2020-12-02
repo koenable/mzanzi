@@ -1,11 +1,16 @@
 <div class="login-page" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px">
+
+
   <div class="logo-container" fxFlexAlign="center">
       <app-logo></app-logo>
   </div>
+
   <mat-card fxFlexAlign="center">
       <mat-card-title>
           Login to MCC Admin Dashboard
       </mat-card-title>
+
+      
       <mat-card-content>
           <form (keyup.enter)="login(email, password)">
               <mat-form-field class="login-field">
